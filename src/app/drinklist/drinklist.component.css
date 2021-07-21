@@ -1,0 +1,10 @@
+.DeckRow {
+    border-bottom: 1px solid #DDD;
+    display: block;
+    height: 90px;
+}
+.TextTypeDisplay__text{
+    padding-left: 20px;
+    font-weight: 600;
+    font-size: 1.1em;
+}

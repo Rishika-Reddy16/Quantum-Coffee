@@ -1,0 +1,17 @@
+
+.TextTypeDisplay__text{
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-right: auto;
+}
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+    text-decoration: none;
+  }
+
+  
+
+
+  
