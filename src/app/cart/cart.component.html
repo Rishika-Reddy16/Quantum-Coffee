@@ -1,16 +1,16 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
 
-        <p class="my-3" routerLink="/drinklist" style="color: blue;cursor: pointer;text-align: center;">Add additional items</p>
+        <p class="my-3" routerLink="/items" style="color: blue;cursor: pointer;text-align: center;">Add additional items</p>
     <div class="mx-4" >
       <div class="row" style="justify-content: center;">
         <div class="card col-md-5 col-lg-5 col-xl-5 mx-1">
-        <div class="card-body" >
+        <div class="card-body" *ngFor="let item of items;index as i">
             <!-- <h4 style="text-align: center;">Cart</h4> -->
             <span style="display: block;padding-bottom: 1%;">
                 <span class="row">
-                    <img class="col-2" src="https://www.appsheet.com/remote/https%3A%2F%2Fstorage.googleapis.com%2Fquantum_coffee_menu_items%2FQuantumCoffee_images%2Flatte.png?width=600" style=" width: 100px;height: 100%;border-radius: 50%;">
+                    <img class="col-2" [src]="item.imgUrls[0]" style=" width: 100px;height: 100%;border-radius: 50%;">
                     <span class="TextTypeDisplay__text col-3" style="align-self: center;">
-                        Latte<br><p style="font-size: 0.7em;font-weight: 400;">Extra sugar</p>
+                        {{item.name}}<br><p style="font-size: 0.7em;font-weight: 400;">Extra sugar</p>
                     </span>
                     <select class="form-select col-1" style="width: 22%;height: 20%;align-self: center;">
                         <option>1</option>
@@ -19,23 +19,7 @@
                         <option>4</option>
                         <option>5</option>
                     </select>
-                    <i class="fas fa-trash-alt col-1" style="align-self: center;"></i>
-              </span>
-            </span>
-            <span style="display: block;padding-bottom: 1%;">
-                <span class="row">
-                    <img class="col-2" src="https://www.appsheet.com/remote/https%3A%2F%2Fstorage.googleapis.com%2Fquantum_coffee_menu_items%2FQuantumCoffee_images%2Flatte.png?width=600" style=" width: 100px;height: 100%;border-radius: 50%;">
-                    <span class="TextTypeDisplay__text col-3" style="align-self: center;">
-                        Latte
-                    </span>
-                    <select class="form-select col-1" style="width: 22%;height: 20%;align-self: center;">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                    <i class="fas fa-trash-alt col-1" style="align-self: center;"></i>
+                    <i class="fas fa-trash-alt col-1" (click)="onDelete(i)" style="align-self: center;"></i> 
               </span>
             </span>
         </div>
@@ -43,18 +27,36 @@
       <br>
       <div class="card col-md-5 col-lg-5 col-xl-5 mx-1" >
         <div class="card-body">
-            <h5>Enter your name and watch the board for your order</h5>
-            <br>
-            <input type="text" style="width: 100%;">
-            </div>
-          </div>
-          </div>
+            <form [formGroup]="Form" >
+                <h5>Enter your name and watch the board for your order</h5>
+                <br>
+                <div class="form-group">
+                    <input type="text" name="fname" formControlName="fname" class="form-control">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
        </div>
-       <div style="position: fixed; bottom: 0; width: 100%;text-align: -webkit-center;">
+       <div style="position: fixed; bottom: 0; width: 100%;">
         <div style="padding:1%;background-color: rgb(255, 255, 255); border-top: 1px solid rgb(218, 220, 224); height: 60px; box-shadow: rgba(0, 0, 0, 0.14) 3px 4px, rgba(0, 0, 0, 0.12) 0px 3px 3px, rgba(0, 0, 0, 0.2) 0px 1px 8px;">
-                <button type="button" class="btn" style="background-color: rgb(72, 145, 219);color:white; font-size: 1.2em;">
-                   Submit order
-                </button>
+            <div class="row">
+                <div class="col-1">
+                    <i class="fas fa-shopping-cart">
+                        <span class=" p-1 bg-danger rounded-circle">
+                            {{itemInCart}}
+                          </span></i>
+                </div>
+                <div class="col" style="text-align: -webkit-center;">
+                
+                    <button type="button" class="btn" (click)="create()" style="background-color: rgb(72, 145, 219);color:white; font-size: 1.2em;">
+                        Submit order
+                     </button>
+                     
+                </div>
+            </div>
+           
+            
         </div>
     </div>
       

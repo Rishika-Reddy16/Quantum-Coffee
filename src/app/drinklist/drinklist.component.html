@@ -1,29 +1,13 @@
 <div style="text-align: center;">
-    <img src="../../assets/undraw_hot_beverage_2vw3.png" width="40%" >
+    <img src="../../assets/1.png" width="40%" >
     <h3>Welcome to the Cloud Space EBC</h3>
     <p style="color: grey;">Let us treat you - to place a coffee order,make your selection below</p>
 </div>
-<span class="DeckRow" tabindex="0" role="button" style="display: block;border-top: 1px solid #DDD;" routerLink="/coffee">
-    <img src="https://www.appsheet.com/remote/https%3A%2F%2Fstorage.googleapis.com%2Fquantum_coffee_menu_items%2FQuantumCoffee_images%2Fcoffee.png?width=600" style="width: 90px;height: 100%;border-radius: 50%; ">
-    <span class="TextTypeDisplay__text">Coffee</span>
-</span>
-<span class="DeckRow" routerLink="/latte">
-    <img src="https://www.appsheet.com/remote/https%3A%2F%2Fstorage.googleapis.com%2Fquantum_coffee_menu_items%2FQuantumCoffee_images%2Flatte.png?width=600" style=" width: 90px;height: 100%;border-radius: 50%;">
-    <span class="TextTypeDisplay__text">Latte</span>
-</span>
-<span class="DeckRow" routerLink="/expresso">
-    <img src="https://www.appsheet.com/remote/https%3A%2F%2Fstorage.googleapis.com%2Fquantum_coffee_menu_items%2FQuantumCoffee_images%2Fespresso.png?width=600" style="width: 90px; height: 100%;border-radius: 50%;">
-    <span class="TextTypeDisplay__text">Expresso</span>
-</span>
-<span class="DeckRow" routerLink="/cappuccino">
-    <img src="https://www.appsheet.com/remote/https%3A%2F%2Fstorage.googleapis.com%2Fquantum_coffee_menu_items%2FQuantumCoffee_images%2Fcappucino.png?width=600" style="width:90px;height:100%;border-radius: 50%; ">
-    <span class="TextTypeDisplay__text">Cappuccino</span>
-</span>
-<span class="DeckRow" routerLink="/hottea">
-    <img src="https://www.appsheet.com/remote/https%3A%2F%2Fstorage.googleapis.com%2Fquantum_coffee_menu_items%2FQuantumCoffee_images%2Ftea.png?width=600" style="width: 90px; height: 100%;border-radius: 50%;">
-    <span class="TextTypeDisplay__text">Hot Tea - Earl Grey</span>
-</span>
-<span class="DeckRow" routerLink="/coldtea">
-    <img src="https://www.appsheet.com/remote/https%3A%2F%2Fstorage.googleapis.com%2Fquantum_coffee_menu_items%2FQuantumCoffee_images%2Fcold_tea.png?width=600" style="width: 90px; height: 100%;border-radius: 50%;">
-    <span class="TextTypeDisplay__text">Cold Tea - Chamomile</span>
-</span>
+<hr style="display: block;border-top: 1px solid rgb(97, 90, 90);margin-bottom: -0%;">
+<div *ngFor="let item of items">
+    <span class="DeckRow" tabindex="0" role="button" style="padding:1%"  [routerLink]="['/items', item.id]" >
+        <img [src]="item.imgUrls[0]" style=" width: 90px;height: 100%;">
+        <span class="TextTypeDisplay__text">{{item.name}}</span>
+    </span>
+</div>
+ 

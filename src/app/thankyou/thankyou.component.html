@@ -1,9 +1,14 @@
 <div class="m-5" style="text-align: center;">
-    <h4>Thankyou!</h4>
+    <h4>Thank you, {{firstname}}!</h4>
     <p>Watch the board behind the coffee bar for your name</p>
-    <img src="../../assets/undraw_Hang_out_re_udl4.png" width="40%">
+    
+    <div style="width: 100%; height: 394px; object-fit: contain;">
+        <div>
+            <img src="../../assets/thanks.png"  style="width: 100%; height: 394px; object-fit: contain;">
+        </div>
+    </div>
     <br>
-    <div><button type="button" class="btn" style="color:rgb(72, 145, 219); font-size: 1em;border:1px solid grey">
+    <div><button type="button" class="btn" (click)="placeOrder()" style="color:rgb(72, 145, 219); font-size: 1em;border:1px solid grey">
         Place another order
     </button></div>
 </div>

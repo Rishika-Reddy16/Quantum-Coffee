@@ -2,11 +2,11 @@
     <div>
         <div style="width: 100%; height: 194px; object-fit: contain;">
             <div>
-                <img src="https://www.appsheet.com/remote/https%3A%2F%2Fstorage.googleapis.com%2Fquantum_coffee_menu_items%2FQuantumCoffee_images%2Fcoffee.png?width=600"  style="width: 100%; height: 194px; object-fit: contain;">
+                <img [src]="item.imgUrls[display]"  style="width: 100%; height: 194px; object-fit: contain;">
             </div>
         </div>
         <div>
-            <div style="font-size: 23.1px; line-height: 1.15;">Coffee</div>
+            <div style="font-size: 23.1px; line-height: 1.15;">{{ item.name }}</div>
             <div class="row">
             <div class="col" style="font-size: 14px; opacity: 0.6; padding-top: 4px; overflow: hidden;">latte is a coffee drink made with espresso and steamed milk.</div>
             <div class="col" >
@@ -35,7 +35,7 @@
 
 <div style="position: fixed; bottom: 0; width: 100%;text-align: -webkit-center;">
     <div style="padding:1%;background-color: rgb(255, 255, 255); border-top: 1px solid rgb(218, 220, 224); height: 60px; box-shadow: rgba(0, 0, 0, 0.14) 3px 4px, rgba(0, 0, 0, 0.12) 0px 3px 3px, rgba(0, 0, 0, 0.2) 0px 1px 8px;">
-            <button type="button" class="btn" style="background-color: rgb(72, 145, 219);color:white; font-size: 1.2em;">
+            <button type="button" class="btn" (click)="addtocart(item)" style="background-color: rgb(72, 145, 219);color:white; font-size: 1.2em;">
                 Add to order
             </button>
     </div>
